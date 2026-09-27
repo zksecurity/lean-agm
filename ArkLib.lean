@@ -1,6 +1,7 @@
 module
 
 public import ArkLib.AGM.Basic
+public import ArkLib.AGM.Interaction
 public import ArkLib.Commitments.Functional.Basic
 public import ArkLib.Commitments.Functional.Hachi.Basic
 public import ArkLib.Commitments.Functional.Hachi.Commitment

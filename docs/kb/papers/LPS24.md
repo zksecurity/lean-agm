@@ -8,7 +8,7 @@ canonical_url: https://eprint.iacr.org/2024/994
 source_metadata: ../sources/LPS24/metadata.yml
 status: seeded
 related_modules:
-  - ArkLib/AGM/Basic.lean
+  - ArkLib/AGM/Interaction.lean
   - ArkLib/ProofSystem/Plonk/Basic.lean
 ---
 
@@ -16,19 +16,17 @@ related_modules:
 
 ## At A Glance
 
-`LPS24` is the second main reference cited by ArkLib's Algebraic Group Model file.
-It is especially relevant because it connects AGM-style reasoning back to Plonk
-knowledge-soundness, which matches ArkLib's long-term protocol ambitions.
+`LPS24` is background for AGM-style reasoning about Plonk knowledge-soundness.
+It motivated the former handle-table interface; the replacement instead cites [FKL18](FKL18.md).
 
 ## What ArkLib Uses From This Paper
 
-- Background for the current AGM mechanization in
-  [`ArkLib/AGM/Basic.lean`](../../../ArkLib/AGM/Basic.lean).
+- Background for applications of the explained-value interface in `ArkLib/AGM/Interaction.lean`.
 - Conceptual linkage between AGM-style reasoning and Plonk knowledge-soundness questions.
 
 ## Main ArkLib Touchpoints
 
-- [`ArkLib/AGM/Basic.lean`](../../../ArkLib/AGM/Basic.lean) cites `LPS24` directly.
+- `ArkLib/AGM/Interaction.lean` provides an interface, not an implementation of this paper's proof.
 - [`ArkLib/ProofSystem/Plonk/Basic.lean`](../../../ArkLib/ProofSystem/Plonk/Basic.lean) is the
   natural neighboring subtree when this reference matters in protocol work.
 
@@ -41,8 +39,7 @@ knowledge-soundness, which matches ArkLib's long-term protocol ambitions.
 ## Known Divergences From ArkLib
 
 - ArkLib has not yet formalized a full `LPS24`-style knowledge-soundness development.
-- The current AGM file focuses on oracle interfaces, group tables, and adversary execution
-  structure rather than on the paper's end results.
+- The current AGM module proves explained-value execution soundness, not the paper's end results.
 
 ## Open Formalization Gaps
 
